@@ -1,5 +1,6 @@
 const Patient = require('../models/patients');
 
+// registering a patient
 module.exports.register = async function(req,res){
     try {
         var new_patient = await new Patient(req.body);

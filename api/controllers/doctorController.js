@@ -1,5 +1,7 @@
 const Doctor = require('../models/doctors');
 const jwt = require('jsonwebtoken');
+
+// doctors registering itself
 module.exports.register = async function(req,res){
     try {
         var new_doctor = await new Doctor(req.body);
@@ -16,6 +18,7 @@ module.exports.register = async function(req,res){
     }
 }
 
+//doctors login
 module.exports.login = function(req,res){
     
     try {

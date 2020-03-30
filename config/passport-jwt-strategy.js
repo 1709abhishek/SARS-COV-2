@@ -4,16 +4,17 @@ const ExtractJWT = require('passport-jwt').ExtractJwt;
 
 const Doctor = require('../api/models/doctors');
 
-
+// secret key and bearer token
 let opts = {
     jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken,
     secretOrKey: 'worldwillfightcorona'
 }
 
 
+//jwt strategy to retrieve token
 passport.use(new JWTStrategy(opts, function(jwtPayLoad, done){
 
-    User.findById(jwtPayLoad._id, function(err, user){
+    Doctor.findById(jwtPayLoad._id, function(err, user){
         if (err){console.log('Error in finding doctor from JWT'); return;}
 
         if (user){

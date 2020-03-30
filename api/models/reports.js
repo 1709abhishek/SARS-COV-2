@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//defining schema
 const reportSchema = new mongoose.Schema({
     
     doc_name: {
@@ -10,6 +11,7 @@ const reportSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    //storing patient id, a foreign key
     patient:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Patient'
@@ -18,6 +20,8 @@ const reportSchema = new mongoose.Schema({
         timestamps: true
 });
 
+//defining variable
 const Report = mongoose.model('Report', reportSchema);
 
+//exporting
 module.exports = Report;

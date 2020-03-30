@@ -1,5 +1,6 @@
 const Report = require('../models/reports');
 
+// creating a report for a particular patient
 module.exports.create = async function(req,res){
     try {
         var new_report = await new Report(req.body);
@@ -17,6 +18,7 @@ module.exports.create = async function(req,res){
     }
 }
 
+// list all the reports for a particular patient
 module.exports.showAll = async function(req,res){
     try {
         let reports = await Report.find({patient: req.params.id});

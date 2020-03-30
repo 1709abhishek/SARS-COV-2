@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//defining schema
 const doctorSchema = new mongoose.Schema({
     
     password: {
@@ -15,6 +16,8 @@ const doctorSchema = new mongoose.Schema({
         timestamps: true
 });
 
+//defining variable
 const Doctor = mongoose.model('Doctor', doctorSchema);
 
+//exporting module
 module.exports = Doctor;
