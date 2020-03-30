@@ -24,7 +24,7 @@ module.exports.login = function(req,res){
     try {
         let doctor = Doctor.findOne({username: req.body.username});
 
-        if(!doctor || doctor.password != doctor.body.password){
+        if(!doctor || doctor.password != req.body.password){
             return res.json(422, {
                 message: "Invalid username or password"
             });

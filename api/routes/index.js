@@ -11,9 +11,7 @@ router.use('/doctors', require('./doctors'));
 router.use('/patients', require('./patients'));
 
 //route for registering patients
-router.post('/register-patients', function(req,res){
-    homeController.register
-});
+router.post('/register-patients', homeController.register);
 
 
 module.exports = router;
