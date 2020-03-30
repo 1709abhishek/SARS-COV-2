@@ -9,6 +9,10 @@ const reportSchema = new mongoose.Schema({
     status: {
         type: String,
         required: true,
+    },
+    patient:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Patient'
     }
 }, {
         timestamps: true
