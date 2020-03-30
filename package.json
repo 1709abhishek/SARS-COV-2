@@ -1,0 +1,29 @@
+{
+  "name": "sars-cov-2",
+  "version": "1.0.0",
+  "description": "an API for the doctors of a Hospital which has been allocated by the govt for testing and quarantine + well being of  COVID-19 patients",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1709abhishek/SARS-COV-2.git"
+  },
+  "author": "kamikaze",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1709abhishek/SARS-COV-2/issues"
+  },
+  "homepage": "https://github.com/1709abhishek/SARS-COV-2#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.6",
+    "nodemon": "^2.0.2",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  }
+}
