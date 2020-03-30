@@ -7,10 +7,10 @@ const router = express.Router();
 const patientController = require('../controllers/patientsController');
 
 //route for creating a report
-router.post('/:id/create_report', patientController);
+router.post('/:id/create_report', patientController.create);
 
 //route for showing all reports
-router.post('/:id/all_reports', patientController);
+router.post('/:id/all_reports', patientController.showAll);
 
 
 module.exports = router;

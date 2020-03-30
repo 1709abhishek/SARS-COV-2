@@ -4,7 +4,7 @@ const Report = require('../models/reports');
 module.exports.create = async function(req,res){
     try {
         var new_report = await new Report(req.body);
-        new_report.patient: req.params.id
+        new_report.patient = req.params.id
         let report = await  new_report.save();
         return res.json(200,{
             message: "report created successfully",

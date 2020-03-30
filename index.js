@@ -20,7 +20,7 @@ app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
 
 //requiring the routes
-app.use('/', require('./api/routes/index'));
+app.use('/', require('./api/routes'));
 
 //running the express server
 app.listen(port, function(err){
