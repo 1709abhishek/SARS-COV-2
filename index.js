@@ -14,10 +14,10 @@ const passportJWT = require('./config/passport-jwt-strategy');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
-app.use(passport.setAuthenticatedUser);
+// app.use(passport.setAuthenticatedUser);
 
 //requiring the routes
 app.use('/', require('./api/routes'));

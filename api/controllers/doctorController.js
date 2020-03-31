@@ -19,7 +19,7 @@ module.exports.register = async function(req,res){
 }
 
 //doctors login
-module.exports.login = function(req,res){
+module.exports.login = async function(req,res){
     
     try {
         let doctor = Doctor.findOne({username: req.body.username});
@@ -32,6 +32,7 @@ module.exports.login = function(req,res){
         return res.json(200, {
             message: 'Sign in successful, here is your token, keep it safe.',
             data: {
+                doctor: doctor,
                 token: jwt.sign(doctor.toJSON(), 'worldwillfightcorona', {expiresIn: '10000'})
             }
         })

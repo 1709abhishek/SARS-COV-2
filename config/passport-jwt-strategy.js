@@ -14,11 +14,11 @@ let opts = {
 //jwt strategy to retrieve token
 passport.use(new JWTStrategy(opts, function(jwtPayLoad, done){
 
-    Doctor.findById(jwtPayLoad._id, function(err, user){
+    Doctor.findById(jwtPayLoad._id, function(err, doctor){
         if (err){console.log('Error in finding doctor from JWT'); return;}
 
-        if (user){
-            return done(null, user);
+        if (doctor){
+            return done(null, doctor);
         }else{
             return done(null, false);
         }
