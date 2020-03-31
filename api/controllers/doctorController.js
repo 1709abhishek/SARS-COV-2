@@ -22,10 +22,17 @@ module.exports.register = async function(req,res){
 module.exports.login = async function(req,res){
     
     try {
-        let doctor = Doctor.findOne({username: req.body.username});
-
-        if(!doctor || doctor.password != req.body.password){
+        let doctor = await Doctor.findOne({username: req.body.username});
+        // console.log(doctor.username);
+        if(!doctor){
+            console.log(username);
             return res.json(422, {
+                message: "Invalid username or password"
+            });
+        }
+        if(doctor.password != req.body.password){
+            // console.log(doctor.password);
+            return res.json(401, {
                 message: "Invalid username or password"
             });
         }
