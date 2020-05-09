@@ -1,9 +1,13 @@
+process.env.NODE_ENV = 'test';
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const jwt = require('jsonwebtoken');
 
+const mongoose = require('mongoose');
+const db = require('../config/testConfig');
+
 const server = require('../index');
-const Patient = require('../models/patients');
+const Patient = require('../models/patient');
 
 //Assertion style 
 chai.should();
@@ -76,3 +80,5 @@ describe('SARS-COV-2 tests', () => {
     })
 
 })
+
+process.env.NODE_ENV = 'development';

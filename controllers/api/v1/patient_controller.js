@@ -1,5 +1,5 @@
-const Report = require('../../../models/reports');
-const Patient = require('../../../models/patients');
+const Report = require('../../../models/report');
+const Patient = require('../../../models/patient');
 
 // creating a report for a particular patient
 module.exports.create = async function (req, res) {

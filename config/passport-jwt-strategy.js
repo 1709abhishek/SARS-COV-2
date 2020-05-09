@@ -2,7 +2,7 @@ const passport = require('passport');
 const JWTStrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;
 
-const Doctor = require('../models/doctors');
+const Doctor = require('../models/doctor');
 
 // secret key and bearer token
 let opts = {

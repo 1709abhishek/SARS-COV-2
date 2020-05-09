@@ -1,4 +1,4 @@
-const Patient = require('../../../models/patients');
+const Patient = require('../../../models/patient');
 
 // registering a patient
 module.exports.register = async function (req, res) {

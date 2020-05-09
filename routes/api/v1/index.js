@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const homeController = require('../../../controllers/api/v1/homeController');
+const homeController = require('../../../controllers/api/v1/home_controller');
 
 // routing to doctors
 router.use('/doctors', require('./doctors'));

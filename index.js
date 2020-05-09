@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 const port = 8000;
-const mongoose = require('mongoose');
-const db = require('./config/mongoose');
-const Doctor = require('./models/doctors');
+if (process.env.NODE_ENV !== 'test') {
+    const mongoose = require('mongoose');
+    const db = require('./config/mongoose');
+}
+const Doctor = require('./models/doctor');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const passportJWT = require('./config/passport-jwt-strategy');
@@ -13,10 +15,6 @@ const passportJWT = require('./config/passport-jwt-strategy');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// app.use(passport.initialize());
-// app.use(passport.session());
-
-// app.use(passport.setAuthenticatedUser);
 
 //requiring the routes
 app.use('/', require('./routes/api/v1'));

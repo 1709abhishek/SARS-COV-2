@@ -11,6 +11,8 @@ an API for the doctors of a Hospital which has been allocated by the govt for te
 6. nodemon
 7. jsonwebtoken
 8. Mongoose
+9. Mocha
+10. Chai
 
 # Routes
 1. /doctors/register → with username and password
@@ -28,3 +30,6 @@ an API for the doctors of a Hospital which has been allocated by the govt for te
 --doctors: username,password
 --patients: phone,name
 --reports: doctor_name,status
+
+# testing
+---- used mocha as a server and chai for assertion library

@@ -1,4 +1,4 @@
-var Report = require('../../../models/reports');
+var Report = require('../../../models/report');
 
 module.exports.showStatus = async function (req, res) {
     var report = await Report.find({ status: req.params.status });
