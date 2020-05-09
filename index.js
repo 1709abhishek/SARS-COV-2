@@ -3,10 +3,9 @@ const app = express();
 const port = 8000;
 const mongoose = require('mongoose');
 const db = require('./config/mongoose');
-const Doctor = require('./api/models/doctors');
+const Doctor = require('./models/doctors');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-const passportLocal = require('./config/passport-local-strategy');
 const passportJWT = require('./config/passport-jwt-strategy');
 
 
@@ -20,12 +19,12 @@ app.use(bodyParser.json());
 // app.use(passport.setAuthenticatedUser);
 
 //requiring the routes
-app.use('/', require('./api/routes'));
+app.use('/', require('./routes/api/v1'));
 
 //running the express server
-app.listen(port, function(err){
-    if(err){
-        console.log('Error in running the server: ',err);
+app.listen(port, function (err) {
+    if (err) {
+        console.log('Error in running the server: ', err);
     }
-     console.log(`server is running on port: ${port}`);
+    console.log(`server is running on port: ${port}`);
 });

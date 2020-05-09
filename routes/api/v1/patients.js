@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 //importing the model
-const patientController = require('../controllers/patientsController');
+const patientController = require('../../../controllers/api/v1/patientsController');
 
 //route for creating a report
 router.post('/:id/create_report', patientController.create);

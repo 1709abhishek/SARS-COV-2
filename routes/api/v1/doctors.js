@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 //importing the model
-const doctorController = require('../controllers/doctorController');
+const doctorController = require('../../../controllers/api/v1/doctorController');
 
 //route for doctor register
 router.post('/register', doctorController.register);
