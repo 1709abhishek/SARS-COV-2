@@ -17,19 +17,28 @@ chai.use(chaiHttp);
 /* **************
 *   GENERATE A NEW TOKEN FROM THE DOCTOR LOGIN ROUTE IN THE API
 */
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTliMWFhNWQ0NmE4YTNiYzhjN2E1MmIiLCJ1c2VybmFtZSI6InNoYWgiLCJwYXNzd29yZCI6IjEyMzQiLCJfX3YiOjAsImlhdCI6MTU4OTAxNzUxNiwiZXhwIjoxNTg5MDIzNTE2fQ.2uyQplX62v2Rro-EuHroezlIGItLLJQifp4FW9q3ULk';
+let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTgyMmJhNDVjZGYyNzY5MDhmYmJmMGEiLCJ1c2VybmFtZSI6ImFiaGkiLCJwYXNzd29yZCI6IjEyIiwiY3JlYXRlZEF0IjoiMjAyMC0wMy0zMFQxNzoyNTo1Ni44NzNaIiwidXBkYXRlZEF0IjoiMjAyMC0wMy0zMFQxNzoyNTo1Ni44NzNaIiwiX192IjowLCJpYXQiOjE1ODkwNTYwNjIsImV4cCI6MTU4OTA1NjA3Mn0.qFWqEpzmPRa4jaPO5No4OPH7PBQOAhuHzP-V-mywo64';
+
+let authBearerToken = 'bearer ' + token;
 
 describe('SARS-COV-2 tests', () => {
+
+    before((done) => {
+        Patient.remove({}, (err) => {
+            done();
+        });
+    })
+
     describe("POST /register-patients", () => {
         it("check if it stores the newly create patient", done => {
             const patient = {
-                name: 'kamika',
-                phone: 1111111114
+                name: 'kam',
+                phone: 1111111112
             }
             chai.request(server)
                 .post("/register-patients")
                 .set('content-type', 'application/x-www-form-urlencoded')
-                // .set({ 'Authorization': 'Bearer ' + token })
+                .set('Authorization', authBearerToken)
                 .send(patient)
                 .end((err, res) => {
                     res.should.have.status(200);
@@ -52,7 +61,7 @@ describe('SARS-COV-2 tests', () => {
             chai.request(server)
                 .post(`/patients/${report.patient}/create_report`)
                 .set('content-type', 'application/x-www-form-urlencoded')
-                // .set({ 'Authorization': 'Bearer ' + token })
+                .set('Authorization', authBearerToken)
                 .send(report)
                 .end((err, res) => {
                     res.should.have.status(200);
@@ -69,7 +78,7 @@ describe('SARS-COV-2 tests', () => {
             const id = "5e82f09c18e3686e10f29dfa";
             chai.request(server)
                 .post(`/patients/${id}/all_reports`)
-                // .set({ 'Authorization': 'Bearer ' + token })
+                .set('Authorization', authBearerToken)
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.reports.should.be.a('array');
