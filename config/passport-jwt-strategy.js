@@ -6,7 +6,7 @@ const Doctor = require('../models/doctor');
 
 // secret key and bearer token
 let opts = {
-    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken,
+    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
     secretOrKey: 'worldwillfightcorona'
 }
 

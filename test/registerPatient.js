@@ -14,10 +14,8 @@ chai.should();
 
 chai.use(chaiHttp);
 
-/* **************
-*   GENERATE A NEW TOKEN FROM THE DOCTOR LOGIN ROUTE IN THE API
-*/
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTliMWFhNWQ0NmE4YTNiYzhjN2E1MmIiLCJ1c2VybmFtZSI6InNoYWgiLCJwYXNzd29yZCI6IjEyMzQiLCJfX3YiOjAsImlhdCI6MTU4OTAxNzUxNiwiZXhwIjoxNTg5MDIzNTE2fQ.2uyQplX62v2Rro-EuHroezlIGItLLJQifp4FW9q3ULk';
+// Generate a new user token from doctors/login
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTgyMmJhNDVjZGYyNzY5MDhmYmJmMGEiLCJ1c2VybmFtZSI6ImFiaGkiLCJwYXNzd29yZCI6IjEyIiwiY3JlYXRlZEF0IjoiMjAyMC0wMy0zMFQxNzoyNTo1Ni44NzNaIiwidXBkYXRlZEF0IjoiMjAyMC0wMy0zMFQxNzoyNTo1Ni44NzNaIiwiX192IjowLCJpYXQiOjE1ODkwNDU0ODksImV4cCI6MTU4OTA0NjQ4OX0.1le-pspAZnKieNSKbZwLXBwCh-lS8thvdQBb-rYU61Q';
 
 describe('SARS-COV-2 tests', () => {
     describe("POST /register-patients", () => {

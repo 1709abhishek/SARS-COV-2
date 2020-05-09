@@ -40,7 +40,7 @@ module.exports.login = async function (req, res) {
             message: 'Sign in successful, here is your token, keep it safe.',
             data: {
                 // doctor: doctor,
-                token: jwt.sign(doctor.toJSON(), 'worldwillfightcorona', { expiresIn: '10000' })
+                token: jwt.sign(doctor.toJSON(), 'worldwillfightcorona', { expiresIn: '1000000' })
             }
         })
     } catch (err) {
