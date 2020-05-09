@@ -14,12 +14,17 @@ chai.should();
 
 chai.use(chaiHttp);
 
+<<<<<<< HEAD
 /* **************
 *   GENERATE A NEW TOKEN FROM THE DOCTOR LOGIN ROUTE IN THE API
 */
 let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTgyMmJhNDVjZGYyNzY5MDhmYmJmMGEiLCJ1c2VybmFtZSI6ImFiaGkiLCJwYXNzd29yZCI6IjEyIiwiY3JlYXRlZEF0IjoiMjAyMC0wMy0zMFQxNzoyNTo1Ni44NzNaIiwidXBkYXRlZEF0IjoiMjAyMC0wMy0zMFQxNzoyNTo1Ni44NzNaIiwiX192IjowLCJpYXQiOjE1ODkwNTYwNjIsImV4cCI6MTU4OTA1NjA3Mn0.qFWqEpzmPRa4jaPO5No4OPH7PBQOAhuHzP-V-mywo64';
 
 let authBearerToken = 'bearer ' + token;
+=======
+// Generate a new user token from doctors/login
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTgyMmJhNDVjZGYyNzY5MDhmYmJmMGEiLCJ1c2VybmFtZSI6ImFiaGkiLCJwYXNzd29yZCI6IjEyIiwiY3JlYXRlZEF0IjoiMjAyMC0wMy0zMFQxNzoyNTo1Ni44NzNaIiwidXBkYXRlZEF0IjoiMjAyMC0wMy0zMFQxNzoyNTo1Ni44NzNaIiwiX192IjowLCJpYXQiOjE1ODkwNDU0ODksImV4cCI6MTU4OTA0NjQ4OX0.1le-pspAZnKieNSKbZwLXBwCh-lS8thvdQBb-rYU61Q';
+>>>>>>> master
 
 describe('SARS-COV-2 tests', () => {
 
