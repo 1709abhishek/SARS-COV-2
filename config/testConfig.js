@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 
 // mongoose instance connection url connection
+// ************testing database strictly**********
 mongoose.connect('mongodb://localhost/SARS-COV-2-testing');
 
 const db = mongoose.connection;

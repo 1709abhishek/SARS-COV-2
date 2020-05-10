@@ -15,7 +15,7 @@ router.use('/patients', require('./patients'));
 // routing to reports
 router.use('/reports', require('./reports'));
 
-//route for registering patients
+//route for registering patients***********authenticated
 router.post('/register-patients', passport.authenticate('jwt', { session: false }), homeController.register);
 
 

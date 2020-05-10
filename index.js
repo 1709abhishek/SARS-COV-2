@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 8000;
+// logic if process environment variable is not test then redirect it to development database
 if (process.env.NODE_ENV !== 'test') {
     const mongoose = require('mongoose');
     const db = require('./config/mongoose');
